@@ -1,40 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# CVForm
+
+CVForm is a React application built with Next.js, Tailwind CSS, and `@shadcn/ui`. It features a form for creating and managing CVs.
 
 ## Getting Started
 
-First, run the development server:
+How to run locally a Claude generated project.
+
+1. Install the necessary packages:
+
+   ```bash
+   npx create-next-app@latest cvform
+   cd cvform
+   npm install lucide-react @shadcn/ui tailwindcss classnames class-variance-authority
+   ```
+
+Select the following options:
+
+- Use TypeScript: No
+- Use ESLint: No
+- Use Tailwind CSS: Yes
+- Use src/ directory: Yes
+- Use App Router: No
+- Use Turbopack: No
+- import alias: Yes
+- what import alias: @/* 
+
+
+2. Run the Shadcn UI setup:
+
+   ```bash
+   npx @shadcn/ui add
+   ```
+Select the following options:
+- alert
+- card 
+
+copy them to src/components/ui
+
+### Development
+
+To start the development server, run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application in the browser. The page will reload if you make edits.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Project Structure
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- `src/components`: Contains the React components including `CVForm.js`.
+- `src/pages`: Includes the Next.js pages.
+- `src/lib`: Utility functions can be placed here, such as `utils.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Utilities
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### `src/lib/utils.js`
 
-## Learn More
+This file contains utility functions used across the application.
 
-To learn more about Next.js, take a look at the following resources:
+- **`cn(...classes)`:** This function takes any number of class name strings and returns a single string with all the classes joined by a space. It filters out any falsy values, which is useful for conditionally applying class names in your components.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+  ```javascript
+  export function cn(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
+  ```
+## Add CVForm.js component
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Add index.js page
 
-## Deploy on Vercel
+```javascript
+import CVForm from "@/components/CVForm";
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+export default function Home() {
+  return <CVForm />;
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### Usage
+
+You can modify the components and utilities to fit your CV form requirements. Start by editing `src/components/CVForm.js` and `src/pages/index.js`.
+
+### Author
+
+- [Your Name]
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to explore the components and build upon this template to suit your project needs.
