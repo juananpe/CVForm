@@ -40,6 +40,11 @@ Select the following options:
 - alert
 - card 
 
+Or, 
+```bash
+npx @shadcn/ui add card alert button
+```
+
 copy them to src/components/ui
 
 ### Development
