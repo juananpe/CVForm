@@ -25,6 +25,11 @@ Select the following options:
 - import alias: Yes
 - what import alias: @/* 
 
+Or use just:
+
+```bash
+npx create-next-app@latest cvform --javascript --no-eslint --tailwind --src-dir --pages --no-app-dir --no-turbo --import-alias "@/*" --yes
+```
 
 2. Run the Shadcn UI setup:
 
